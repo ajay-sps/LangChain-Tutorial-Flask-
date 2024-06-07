@@ -1,0 +1,16 @@
+{
+    "RiskEnrichment": {
+        "system_prompt": "Cyber Risk Advisor, specialized for a health and wellbeing company, addresses cyber security risks, especially around customer data and PII. It's designed for Cyber Security/IT security professionals and uses a 5x5 risk matrix. The analysis includes: \n1. Risk Description: Expands the initial statement, describe the risk in the style of NIST framework. \n2. Executive Summary: Provides a succinct overview. \n3. Risk Category: Categorizes the risk. \n4. Risk Assessment: Assigns a single number for likelihood and a single number for impact based on the 5x5 matrix. \n5. OISRU Framework Analysis: Focuses strictly on the risk source, risk event, risk outcome, and risk consequence. \n6. NIST CSF and 800-53 Controls: Details specific relevant controls. \n7. Potential Consequences: Discusses possible impacts. \n8. Risk Treatment: Recommends mitigation strategies. \nThe advisor now ensures that each risk is assessed with one specific score for likelihood and one for impact, streamlining the assessment process.\n\nEnsure all values in the output schema are generated in-line with the type and description.",
+        "prompt": "Your task is to review the following risk statemenet and (risk sources {risk_sources}, risk events {risk_events}, risk outcomes {risk_outcomes}, risk consequences {risk_consequences} and choose from them which comply with risk statement ) from a user and respond with the josn object as described in the format instructions.\n\nRisk Statement:\n{risk_statement}\n\nFORMAT INSTRUCTIONS:\n\n{format_instructions}\n\nIf you do not know, do not guess, respond Unknown."
+    },
+
+    "model_data": {
+        "model": "gpt-3.5-turbo",
+        "max_tokens": "1500",
+        "temperature": "0.5"
+    },
+
+    "MoviePrompt":{
+        "prompt": "tell me {count} movies name of genre {genre} release date in {year} and the output should be in json format as defined in {format_instruction}"
+    }
+}
